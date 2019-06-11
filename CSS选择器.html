@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 
+        选择器
+            1.元素选择器
+            2.类选择器
+            3.id选择器
+        优先级：
+            相同的选择器：看顺序
+            行间样式>id选择器>类选择器>元素选择器
+        层叠样式表
+            根据优先级（引入方式/顺序/选择器）相同属性相覆盖不同属性相叠加
+        */
+        .myTwo{
+            color: deeppink;
+        }
+        h1{
+            color: tomato;
+        }
+        #testid{
+            color: yellow;
+        }
+        .myA{
+            color: deepskyblue;
+        }
+        .h3myTwo{
+            color: aqua;
+        }
+        /* 复合选择器 */
+        .bigBox div ul li ul li{
+            color: red;
+        }
+        ul li{
+            font-size: 150%;
+        }
+        /* 并集选择器 */
+        h1,h2,h3,h4,h5,h6,.myDiv{
+            color: deeppink;
+        }
+        .myDiv{
+            color: red;
+        }
+        /* 交集选择器 */
+        h4.myDiv{
+            font-size: 50px;
+        }
+        .myDiv.oneDiv{
+            color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>我是第一个H1</h1><!-- tomato -->
+    <h1 class="myTwo">我是第二个h1</h1><!-- deeppink -->
+    <h3 class="myTwo h3myTwo myA">我是第一个h3</h3><!-- aqua -->
+    <a href="">我是a1</a><!-- 未访问蓝色，访问后紫色 -->
+    <a href="" class="myA">我是a2</a><!-- deepskyblue --> 
+    <a href="" id="testid" class="myA" style="color: purple">我是a3</a><!-- purple -->
+    
+    <div class="bigBox">
+        <div>
+            <ul>
+                <li>第一个</li>
+                <li>第二个</li>
+                <li>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <ul>
+            <li>外面的第一个</li>
+            <li>外面的第二个</li>
+            <li>外面的第三个</li>
+        </ul>
+    </div>
+
+    <h1>我是第一个h1</h1>
+    <h2>我是第一个h2</h2>
+    <h3>我是第一个h3</h3>
+    <h4 class="myDiv">我是第一个h4</h4>
+    <h5>我是第一个h5</h5>
+    <h6>我是第一个h6</h6>
+    <div class="myDiv oneDiv">我是第一个div</div>
+    <div class="myDiv twoDiv">我是第二个div</div>
+
+</body>
+</html>
